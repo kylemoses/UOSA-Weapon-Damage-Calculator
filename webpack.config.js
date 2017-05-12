@@ -1,21 +1,26 @@
-var webpack = require('webpack');
-var path = require('path');
-
-var BUILD_DIR = path.resolve(__dirname, 'src/client/public');
-var APP_DIR = path.resolve(__dirname, 'src/client/app');
-
-var config = {
-	entry: APP_DIR + '/index.jsx',
+var webpack = require("webpack");
+module.exports = {
+	entry: {
+		app: ["webpack/hot/dev-server", "./js/entry.js"]
+	},
 	output: {
-		path: BUILD_DIR,
-		filename: 'bundle.js'
+		path: "./public/built",
+		filename: "bundle.js",
+		publicPath: "http://localhost:8080/built/"
+	},
+	devServer: {
+		contentBase: "./public",
+		publicPath: "http://localhost:8080/built/"
 	},
 	module: {
-		loaders: [{
-			test: /\.jsx?/,
-			include: APP_DIR,
-			loader: 'babel-loader'
-		}]
-	}
+		loaders: [
+			{ test: /\.js$/, loader: "babel-loader", exclude: /node_modules/ },
+			{ test: /\.css$/, loader: "style-loader!css-loader" },
+			{ test: /\.less$/, loader: "style-loader!css-loader!less-loader" }
+		]
+	},
+	plugins: [
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.IgnorePlugin(new RegExp("^(fs|ipc)$"))
+	]
 };
-module.exports = config;
