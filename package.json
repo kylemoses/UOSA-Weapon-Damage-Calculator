@@ -1,0 +1,25 @@
+{
+  "name": "uosa-weapon-damage-calculator",
+  "version": "1.0.0",
+  "description": "Calculate the damage based on various properties",
+  "main": "server.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kylemoses/UOSA-Weapon-Damage-Calculator.git"
+  },
+  "author": "Kyle Moses",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kylemoses/UOSA-Weapon-Damage-Calculator/issues"
+  },
+  "homepage": "https://github.com/kylemoses/UOSA-Weapon-Damage-Calculator#readme",
+  "dependencies": {
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^2.5.1"
+  }
+}
