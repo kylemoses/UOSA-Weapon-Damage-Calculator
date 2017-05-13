@@ -1,7 +1,7 @@
 var webpack = require("webpack");
 module.exports = {
 	entry: {
-		app: ["webpack/hot/dev-server", "./js/entry.js"]
+		app: ["webpack/hot/dev-server", "./app/entry.jsx"]
 	},
 	output: {
 		path: "./public/built",
@@ -15,6 +15,14 @@ module.exports = {
 	module: {
 		loaders: [
 			{ test: /\.js$/, loader: "babel-loader", exclude: /node_modules/ },
+			{
+				test: /\.jsx?$/,
+				loader: "babel-loader",
+				exclude: /node_modules/,
+				query: {
+					presets: ["react", "es2015"]
+				}
+			},
 			{ test: /\.css$/, loader: "style-loader!css-loader" },
 			{ test: /\.less$/, loader: "style-loader!css-loader!less-loader" }
 		]

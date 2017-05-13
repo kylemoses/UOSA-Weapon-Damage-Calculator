@@ -1,6 +1,6 @@
 var Weapon = function() {
 	this.name = "";
-	this.skillType = "Swordsmanship"; // Swordsmanship | Macing | Fencing | Archery
+	this.skill = "Swordsmanship"; // Swordsmanship | Macing | Fencing | Archery
 	this.hands = 1;
 	this.durability: 0;
 	this.isMagic: true;
