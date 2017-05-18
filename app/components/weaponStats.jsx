@@ -1,5 +1,5 @@
 import React from "react";
-import { weapons } from "../data/weapons.jsx";
+import { weapons } from "../data/weapon.jsx";
 class weaponStats extends React.Component {
 	constructor(props) {
 		super(props);
@@ -13,13 +13,21 @@ class weaponStats extends React.Component {
 		});
 		return (
 			<aside className="weapon-stats">
-				{"Name: " + weaponStats.name + ":"}<br />
+				{"Name: " + weaponStats.name}<br />
+				{"Class: " + weaponStats.skill}<br />
 				{"Damage: " +
 					weaponStats.damage.numDice +
 					"d" +
-					weaponStats.damage.numSides +
-					" +" +
-					weaponStats.damage.bonus}
+					weaponStats.damage.diceSides +
+					"+" +
+					weaponStats.damage.flatBonus}
+				<br />
+				{"Min Damage: " + weaponStats.baseWeaponDamageCalc().minDamage}
+				<br />
+				{"Max Damage: " + weaponStats.baseWeaponDamageCalc().maxDamage}
+				<br />
+				{"Avg Damage: " +
+					weaponStats.baseWeaponDamageCalc().averageDamage}
 				<br />
 				{"Speed: " + weaponStats.speed}<br />
 			</aside>

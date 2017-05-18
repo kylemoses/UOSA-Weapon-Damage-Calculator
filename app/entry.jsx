@@ -42,6 +42,7 @@ class App extends React.Component {
 						: ""}
 					{this.state.selectedWeapon != undefined
 						? <WeaponStats
+								key={this.state.selectedWeapon}
 								selectedWeapon={this.state.selectedWeapon}
 							/>
 						: ""}
@@ -49,6 +50,7 @@ class App extends React.Component {
 				<div className="character-panel">
 					<h3>Choose Your Stats</h3>
 				</div>
+				<div className="output-panel" />
 			</div>
 		);
 	}

@@ -1,17 +1,19 @@
 import React from "react";
-import { weapons } from "../data/weapons.jsx";
+import { weaponsArray } from "./data/weapons.jsx";
+
 class weaponList extends React.Component {
   constructor(props) {
     super(props);
   }
   render() {
+    console.log(Object.keys(weapons).length);
     let selectedCombatSkill = this.props.selectedCombatSkill;
     let weaponSet = [];
-    weapons.reduce(function(total, current) {
-      return current.skill === selectedCombatSkill
-        ? weaponSet.push(current)
-        : "";
-    });
+    let keys = Object.values(weapons);
+    for (let w = 0; w < keys.length; w++) {
+      console.log(keys[w]);
+      keys[w].skill === selectedCombatSkill ? weaponSet.push(current) : "";
+    }
     return (
       <label htmlFor="weapon-list">
         {"Weapon"}<br />
