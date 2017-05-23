@@ -1,35 +1,31 @@
 import React from "react";
-import { weapons } from "../data/weapon.jsx";
 class weaponStats extends React.Component {
 	constructor(props) {
 		super(props);
 	}
 	render() {
 		let selectedWeapon = this.props.selectedWeapon;
-		let weaponStats = weapons.reduce(function(total, current) {
+		let weaponStats = {};
+		console.log(this.props.weaponsArray);
+		this.props.weaponsArray.reduce(function(prev, current) {
 			console.log("selectedWeapon:" + selectedWeapon);
-			console.log(current.name);
-			return current.name == selectedWeapon ? current : "";
-		});
+			console.log(current);
+			return current.name == selectedWeapon ? weaponStats = current : "";
+		},0);
 		return (
 			<aside className="weapon-stats">
-				{"Name: " + weaponStats.name}<br />
-				{"Class: " + weaponStats.skill}<br />
-				{"Damage: " +
-					weaponStats.damage.numDice +
-					"d" +
-					weaponStats.damage.diceSides +
-					"+" +
-					weaponStats.damage.flatBonus}
+				Name: <strong>{weaponStats.name}</strong><br />
+				Skill: <strong>{weaponStats.skill}</strong><br />
+				Damage: <strong>{weaponStats.damage.numDice}d{weaponStats.damage.diceSides}+{weaponStats.damage.flatBonus}</strong>
 				<br />
-				{"Min Damage: " + weaponStats.baseWeaponDamageCalc().minDamage}
+				Min Damage: <strong>{weaponStats.baseWeaponDamageCalc().minDamage}</strong>
 				<br />
-				{"Max Damage: " + weaponStats.baseWeaponDamageCalc().maxDamage}
+				Max Damage: <strong>{weaponStats.baseWeaponDamageCalc().maxDamage}</strong>
 				<br />
-				{"Avg Damage: " +
-					weaponStats.baseWeaponDamageCalc().averageDamage}
+				Avg Damage: <strong>{weaponStats.baseWeaponDamageCalc().averageDamage}</strong>
 				<br />
-				{"Speed: " + weaponStats.speed}<br />
+				Speed: <strong>{weaponStats.speed}</strong>
+				<br />
 			</aside>
 		);
 	}

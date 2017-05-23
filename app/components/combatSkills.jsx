@@ -11,14 +11,14 @@ class combatSkills extends React.Component {
   render() {
     return (
       <label htmlFor="weapon-list">
-        <h4>Choose a combat skill:</h4>
+        Select Combat Skill <br/>
         <select
           name="weapon-list"
           id="weapon-list"
           onChange={this.changeHandler}
           ref="combatSkills"
         >
-          <option value="0">Choose a combat skill</option>
+          <option value="0">-- select skill --</option>
           <option value="Swordsmanship">Swordsmanship</option>
           <option value="Macing">Macing</option>
           <option value="Fencing">Fencing</option>

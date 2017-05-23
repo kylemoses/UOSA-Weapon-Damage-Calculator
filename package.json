@@ -4,7 +4,7 @@
   "description": "Calculate the damage based on various properties",
   "main": "./app/main.js",
   "scripts": {
-    "start": "./node_modules/.bin/electron .",
+    "start": "electron .",
     "watch": "./node_modules/.bin/webpack-dev-server",
     "electron-rebuild": "./node_modules/.bin/electron-rebuild"
   },

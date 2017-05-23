@@ -1,4 +1,4 @@
-import { weaponsArray } from "./data/weapons.jsx";
+import { weaponsArray } from "./weapons.jsx";
 export class Weapon {
 	constructor(name, damage, speed, skill) {
 		this.name = name;
